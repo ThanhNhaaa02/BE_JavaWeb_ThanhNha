@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="javaOracleWebis.mapper.UserMapper">
+
+
+	<resultMap id="userResultMap"
+		type="javaOracleWebis.entity.User">
+
+		<result column="MAKH" property="MaKhachHang" />
+		<result column="TENKH" property="TenKhachHang" />
+		<result column="DIACHI" property="Diachi" />
+	</resultMap>
+	
+	<select id="getAllUser" resultMap="userResultMap">
+		select urs.MAKH
+		, urs.TENKH
+		, urs.DIACHI
+		FROM SYSTEM.f4_inv_hr_user urs
+		where 1 = 1
+	</select>
+</mapper>
